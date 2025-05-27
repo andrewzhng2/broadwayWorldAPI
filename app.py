@@ -1,5 +1,6 @@
 from playwright.sync_api import sync_playwright
 from flask import Flask, jsonify
+from flask_cors import CORS
 
 import os
 import json
@@ -23,6 +24,7 @@ def save_cache(data):
         json.dump(data, f)
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route("/broadway")
 def get_broadway():
