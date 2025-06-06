@@ -42,6 +42,7 @@ def get_broadway():
             page.goto("https://www.broadwayworld.com/grosses.cfm", timeout=60000)
 
             # Wait for the table to load
+            page.wait_for_selector("#grosses-container") 
             page.wait_for_selector("div.table")
             page.wait_for_timeout(1000)
 
